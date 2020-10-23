@@ -24,11 +24,30 @@ class BerlinClock
     }
 
     public function getClock($hours,$minutes,$secondes){
-        return $this->getFiveHour(floor($hours/5))
-            .":".$this->getSimpleHour($hours%5)
-            .":".$this->getFiveMinute(floor($minutes/5))
-            .":".$this->getSimpleMinute($minutes%5)
-            .":".$this->getSecond($secondes);
+        $clock=$this->getSecond($secondes)==1?"seconde light : ON":"seconde light : OFF";
+        $clock.=$this->generateLine("five hours: ",$this->getFiveHour(floor($hours/5)),4,"r ");
+        $clock.=$this->generateLine("simple hours: ",$this->getSimpleHour($hours%5),4,"r ");
+        $clock.=$this->generateLine("five minutes: ",$this->getFiveMinute(floor($minutes/5)),11,"y ","r ",3);
+        $clock.=$this->generateLine("simple minutes: ", $this->getSimpleMinute($minutes%5),4,"y ");
+        return $clock;
+    }
+
+    public function generateLine($prefix,$n,$max,$color,$colorBis=null,$cdt=null){
+        $str="\n".$prefix;
+        $i = 0;
+        while($i<$n) {
+            if ($cdt != null && $i % $cdt == 0) {
+                $str .= $colorBis;
+            } else
+                $str .= $color;
+            $i++;
+        }
+        while ($i<$max){
+            $str.="OFF ";
+            $i++;
+        }
+
+        return $str;
     }
 
 }
