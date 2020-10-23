@@ -89,41 +89,46 @@ class BerlinClockTest extends TestCase
 
     function testClock_Given0_0_0_Return0_0_0_0_1(){
         $actual = $this->berlinClock->getClock(0,0,0);
-        $this->assertEquals("0:0:0:0:1",$actual);
+        $this->assertEquals("seconde light : ON\nfive hours: OFF OFF OFF OFF \nsimple hours: OFF OFF OFF OFF \nfive minutes: OFF OFF OFF OFF OFF OFF OFF OFF OFF OFF OFF \nsimple minutes: OFF OFF OFF OFF ",$actual);
     }
 
     function testClock_Given0_0_1_Return0_0_0_0_0(){
         $actual = $this->berlinClock->getClock(0,0,1);
-        $this->assertEquals("0:0:0:0:0",$actual);
+        $this->assertEquals("seconde light : OFF\nfive hours: OFF OFF OFF OFF \nsimple hours: OFF OFF OFF OFF \nfive minutes: OFF OFF OFF OFF OFF OFF OFF OFF OFF OFF OFF \nsimple minutes: OFF OFF OFF OFF ",$actual);
     }
 
     function testClock_Given0_1_0_Return0_0_0_1_1(){
         $actual = $this->berlinClock->getClock(0,1,0);
-        $this->assertEquals("0:0:0:1:1",$actual);
+        $this->assertEquals("seconde light : ON\nfive hours: OFF OFF OFF OFF \nsimple hours: OFF OFF OFF OFF \nfive minutes: OFF OFF OFF OFF OFF OFF OFF OFF OFF OFF OFF \nsimple minutes: y OFF OFF OFF ",$actual);
     }
 
     function testClock_Given0_5_0_Return0_0_1_0_1(){
         $actual = $this->berlinClock->getClock(0,5,0);
-        $this->assertEquals("0:0:1:0:1",$actual);
+        $this->assertEquals("seconde light : ON\nfive hours: OFF OFF OFF OFF \nsimple hours: OFF OFF OFF OFF \nfive minutes: y OFF OFF OFF OFF OFF OFF OFF OFF OFF OFF \nsimple minutes: OFF OFF OFF OFF ",$actual);
     }
 
     function testClock_Given0_6_0_Return0_0_1_1_1(){
         $actual = $this->berlinClock->getClock(0,6,0);
-        $this->assertEquals("0:0:1:1:1",$actual);
+        $this->assertEquals("seconde light : ON\nfive hours: OFF OFF OFF OFF \nsimple hours: OFF OFF OFF OFF \nfive minutes: y OFF OFF OFF OFF OFF OFF OFF OFF OFF OFF \nsimple minutes: y OFF OFF OFF ",$actual);
     }
 
     function testClock_Given1_0_0_Return0_1_0_0_1(){
         $actual = $this->berlinClock->getClock(1,0,0);
-        $this->assertEquals("0:1:0:0:1",$actual);
+        $this->assertEquals("seconde light : ON\nfive hours: OFF OFF OFF OFF \nsimple hours: r OFF OFF OFF \nfive minutes: OFF OFF OFF OFF OFF OFF OFF OFF OFF OFF OFF \nsimple minutes: OFF OFF OFF OFF ",$actual);
     }
 
     function testClock_Given5_0_0_Return1_0_0_0_1(){
         $actual = $this->berlinClock->getClock(5,0,0);
-        $this->assertEquals("1:0:0:0:1",$actual);
+        $this->assertEquals("seconde light : ON\nfive hours: r OFF OFF OFF \nsimple hours: OFF OFF OFF OFF \nfive minutes: OFF OFF OFF OFF OFF OFF OFF OFF OFF OFF OFF \nsimple minutes: OFF OFF OFF OFF ",$actual);
     }
 
     function testClock_Given6_0_0_Return1_1_0_0_1(){
         $actual = $this->berlinClock->getClock(6,0,0);
-        $this->assertEquals("1:1:0:0:1",$actual);
+        $this->assertEquals("seconde light : ON\nfive hours: r OFF OFF OFF \nsimple hours: r OFF OFF OFF \nfive minutes: OFF OFF OFF OFF OFF OFF OFF OFF OFF OFF OFF \nsimple minutes: OFF OFF OFF OFF ",$actual);
+    }
+
+    function testClock_Given0_15_0_Return0_0_3_0_1(){
+        $actual = $this->berlinClock->getClock(0,15,0);
+        $this->assertEquals("seconde light : ON\nfive hours: OFF OFF OFF OFF \nsimple hours: OFF OFF OFF OFF \nfive minutes: y y r OFF OFF OFF OFF OFF OFF OFF OFF \nsimple minutes: OFF OFF OFF OFF ",$actual);
     }
 }

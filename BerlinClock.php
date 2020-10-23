@@ -34,15 +34,15 @@ class BerlinClock
 
     public function generateLine($prefix,$n,$max,$color,$colorBis=null,$cdt=null){
         $str="\n".$prefix;
-        $i = 0;
-        while($i<$n) {
+        $i = 1;
+        while($i<=$n) {
             if ($cdt != null && $i % $cdt == 0) {
                 $str .= $colorBis;
             } else
                 $str .= $color;
             $i++;
         }
-        while ($i<$max){
+        while ($i<=$max){
             $str.="OFF ";
             $i++;
         }
