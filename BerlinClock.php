@@ -4,7 +4,7 @@
 class BerlinClock
 {
     public function getSimpleMinute($int){
-        return "0";
+        return strval($int);
     }
 
 }
