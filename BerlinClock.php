@@ -20,7 +20,7 @@ class BerlinClock
     }
 
     public function getSecond($int){
-        return "0";
+        return strval($int);
     }
 
 }
