@@ -7,4 +7,8 @@ class BerlinClock
         return strval($int%5);
     }
 
+    public function getFiveMinute($int){
+        return "0";
+    }
+
 }
