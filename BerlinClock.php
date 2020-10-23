@@ -3,7 +3,7 @@
 
 class BerlinClock
 {
-    public function getMinute($int){
+    public function getSimpleMinute($int){
         return "0";
     }
 
