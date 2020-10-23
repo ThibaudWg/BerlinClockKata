@@ -101,4 +101,9 @@ class BerlinClockTest extends TestCase
         $actual = $this->berlinClock->getClock(0,1,0);
         $this->assertEquals("0:0:0:1:1",$actual);
     }
+
+    function testClock_Given0_5_0_Return0_0_1_0_1(){
+        $actual = $this->berlinClock->getClock(0,5,0);
+        $this->assertEquals("0:0:1:0:1",$actual);
+    }
 }
