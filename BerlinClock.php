@@ -15,4 +15,8 @@ class BerlinClock
         return strval($int%5);
     }
 
+    public function getFiveHour($int){
+        return "0";
+    }
+
 }
