@@ -16,7 +16,7 @@ class BerlinClock
     }
 
     public function getFiveHour($int){
-        return strval($int);
+        return strval($int%5);
     }
 
 }
