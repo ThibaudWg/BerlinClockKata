@@ -19,4 +19,8 @@ class BerlinClock
         return strval($int%5);
     }
 
+    public function getSecond($int){
+        return "0";
+    }
+
 }
