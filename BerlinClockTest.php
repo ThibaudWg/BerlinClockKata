@@ -46,4 +46,9 @@ class BerlinClockTest extends TestCase
         $actual =$this->berlinClock->getSimpleHour(0);
         $this->assertEquals("0", $actual);
     }
+
+    function testSimpleHour_Given1_Return1(){
+        $actual =$this->berlinClock->getSimpleHour(1);
+        $this->assertEquals("1", $actual);
+    }
 }

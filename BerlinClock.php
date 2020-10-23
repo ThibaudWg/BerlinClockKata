@@ -12,7 +12,7 @@ class BerlinClock
     }
 
     public function getSimpleHour($int){
-        return "0";
+        return strval($int);
     }
 
 }
