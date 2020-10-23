@@ -72,18 +72,18 @@ class BerlinClockTest extends TestCase
         $this->assertEquals("0", $actual);
     }
 
-    function testSecond_Given0_Return0(){
+    function testSecond_Given0_Return1(){
         $actual =$this->berlinClock->getSecond(0);
-        $this->assertEquals("0", $actual);
-    }
-
-    function testSecond_Given1_Return1(){
-        $actual =$this->berlinClock->getSecond(1);
         $this->assertEquals("1", $actual);
     }
 
-    function testSecond_Given2_Return0(){
-        $actual =$this->berlinClock->getSecond(2);
+    function testSecond_Given1_Return0(){
+        $actual =$this->berlinClock->getSecond(1);
         $this->assertEquals("0", $actual);
+    }
+
+    function testSecond_Given2_Return1(){
+        $actual =$this->berlinClock->getSecond(2);
+        $this->assertEquals("1", $actual);
     }
 }
