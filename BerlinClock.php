@@ -4,23 +4,23 @@
 class BerlinClock
 {
     public function getSimpleMinute($int){
-        return strval($int%5);
+        return $int%5;
     }
 
     public function getFiveMinute($int){
-        return strval($int%12);
+        return $int%12;
     }
 
     public function getSimpleHour($int){
-        return strval($int%5);
+        return $int%5;
     }
 
     public function getFiveHour($int){
-        return strval($int%5);
+        return $int%5;
     }
 
     public function getSecond($int){
-        return strval(1-$int%2);
+        return 1-$int%2;
     }
 
     public function getClock($hours,$minutes,$secondes){
